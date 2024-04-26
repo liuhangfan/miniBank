@@ -1,0 +1,32 @@
+<!--{% if error %}-->
+<!--<p style="color: red">{{ error }}</p>-->
+<!--{% endif %}-->
+<!--<form method="post" action="/login">-->
+<!--  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />-->
+<!--  <p>Email: <input type="text" name="email" /></p>-->
+<!--  <p>Password: <input type="password" name="password" /></p>-->
+<!--  <p><input type="submit" value="Login" /></p>-->
+<!--</form>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+        <p style="color: red">{{ error }}</p>
+        {% endif %}
+        <form method="post" action="/login">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          <p>Email: <input type="text" name="email" /></p>
+          <p>Password: <input type="password" name="password" /></p>
+          <p><input type="submit" value="Login" /></p>
+        </form>
+    </div>
+</body>
+</html>
